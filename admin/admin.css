@@ -1,0 +1,358 @@
+/* admin/admin.css - ملف مركزي لتنسيقات لوحة التحكم (نسخة مطورة) */
+
+/* =================================== */
+/* 0. Global & Variables
+/* =================================== */
+:root {
+    --admin-primary: #667eea; /* نفس لون المتجر */
+    --admin-primary-dark: #5a6edc;
+    --admin-secondary: #764ba2; /* نفس لون المتجر الثانوي */
+    --admin-light: #f8f9fa;
+    --admin-dark: #343a40;
+    --admin-text: #495057;
+    --admin-muted: #6c757d;
+    --admin-border: #dee2e6;
+    --admin-success: #28a745;
+    --admin-danger: #dc3545;
+    --admin-info: #17a2b8;
+    --admin-warning: #ffc107;
+    --admin-radius: 0.3rem; /* توحيد زوايا العناصر */
+    --admin-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    --admin-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+
+body {
+    background-color: #f4f6f9; /* لون خلفية أفتح قليلاً */
+    font-family: 'Cairo', sans-serif;
+    padding-top: 56px;
+    color: var(--admin-text);
+}
+
+/* =================================== */
+/* 1. Sidebar & Navigation
+/* =================================== */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 250px; /* زيادة العرض قليلاً */
+    padding: 56px 0 0;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* ظل أنعم */
+    background-color: var(--admin-dark);
+    z-index: 100;
+    overflow-y: auto;
+    transition: width 0.3s ease; /* تأثير بسيط للانتقال */
+}
+
+.sidebar .nav-link {
+    font-weight: 500;
+    color: rgba(255, 255, 255, .8);
+    padding: 1rem 1.5rem; /* زيادة المساحة الداخلية */
+    border-right: 3px solid transparent; /* إضافة مؤشر للتحديد */
+    transition: all 0.2s ease;
+}
+
+.sidebar .nav-link:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-right-color: var(--admin-primary);
+}
+
+.sidebar .nav-link.active {
+    color: #fff;
+    background-color: var(--admin-primary);
+    border-right-color: var(--admin-primary);
+    font-weight: bold;
+}
+
+.sidebar .nav-link .fas {
+    margin-left: 10px;
+    width: 20px;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.main-content {
+    padding: 30px; /* زيادة الهوامش الداخلية */
+    margin-right: 250px; /* مطابقة لعرض الشريط الجانبي */
+    transition: margin-right 0.3s ease;
+}
+
+.navbar-brand {
+    color: #fff !important;
+    font-weight: bold;
+    padding: 0.5rem 1.5rem;
+}
+
+.logout-btn {
+    cursor: pointer;
+    color: rgba(255, 255, 255, .8) !important;
+    transition: color 0.2s ease;
+}
+.logout-btn:hover {
+    color: #fff !important;
+}
+
+/* =================================== */
+/* 2. Admin Login Page
+/* =================================== */
+body:has(.login-card) {
+    padding-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--admin-light);
+}
+
+.login-card {
+    max-width: 420px;
+    width: 100%;
+    padding: 40px;
+    box-shadow: var(--admin-shadow-lg);
+    border-radius: var(--admin-radius);
+    background-color: #fff;
+    border-top: 5px solid var(--admin-primary);
+}
+
+.login-card h2 {
+    margin-bottom: 30px;
+    color: var(--admin-primary);
+    font-weight: bold;
+}
+
+.login-card .form-control {
+    padding: 0.75rem 1rem;
+    border-radius: var(--admin-radius);
+}
+
+.login-card .form-control:focus {
+    border-color: var(--admin-secondary);
+    box-shadow: 0 0 0 0.2rem rgba(118, 75, 162, 0.25);
+}
+
+.login-card .btn-primary {
+    background: var(--admin-primary);
+    border: none;
+    padding: 0.75rem 1rem;
+    font-weight: bold;
+    border-radius: var(--admin-radius);
+    transition: background-color 0.2s ease;
+}
+.login-card .btn-primary:hover {
+    background: var(--admin-primary-dark);
+}
+
+/* =================================== */
+/* 3. General Content Styles
+/* =================================== */
+.page-header {
+    border-bottom: 1px solid var(--admin-border);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+.page-header h1 {
+    font-weight: bold;
+    color: var(--admin-text);
+}
+
+.card {
+    border: none;
+    border-radius: var(--admin-radius);
+    box-shadow: var(--admin-shadow);
+    margin-bottom: 1.5rem;
+}
+.card-header {
+    background-color: #fff;
+    border-bottom: 1px solid var(--admin-border);
+    font-weight: bold;
+    padding: 1rem 1.5rem;
+}
+.card-body {
+    padding: 1.5rem;
+}
+
+/* =================================== */
+/* 4. Tables (Products & Orders)
+/* =================================== */
+.table-responsive {
+    border: 1px solid var(--admin-border);
+    border-radius: var(--admin-radius);
+    overflow: hidden; /* لإخفاء الزوايا الحادة للجدول */
+}
+
+.table {
+    margin-bottom: 0; /* إزالة الهامش السفلي الافتراضي */
+}
+
+.table thead th {
+    background-color: var(--admin-light);
+    border-bottom-width: 2px;
+    border-color: var(--admin-border);
+    font-weight: bold;
+    padding: 1rem; /* زيادة الحشو */
+    white-space: nowrap; /* منع التفاف النص */
+}
+
+.table th,
+.table td {
+    vertical-align: middle;
+    padding: 0.9rem 1rem; /* تناسق الحشو */
+    border-top-color: var(--admin-border);
+}
+
+.table tbody tr:hover {
+    background-color: rgba(0,0,0,0.03); /* تأثير hover خفيف */
+}
+
+.table img {
+    max-width: 50px;
+    height: 50px; /* جعلها مربعة */
+    object-fit: cover; /* لضمان ملء الصورة للمربع */
+    border-radius: var(--admin-radius);
+    border: 1px solid var(--admin-border);
+}
+
+.action-buttons button {
+    margin: 0 3px;
+    padding: 0.3rem 0.6rem; /* حجم أصغر للأزرار الداخلية */
+    border-radius: var(--admin-radius);
+    transition: all 0.2s ease;
+}
+.action-buttons button:hover {
+    transform: scale(1.1);
+}
+
+/* =================================== */
+/* 5. Modals (Products & Orders)
+/* =================================== */
+.modal-header {
+    background-color: var(--admin-light);
+    border-bottom-color: var(--admin-border);
+}
+.modal-title {
+    font-weight: bold;
+    color: var(--admin-text);
+}
+.modal-footer {
+    background-color: var(--admin-light);
+    border-top-color: var(--admin-border);
+}
+
+.modal-body .form-group label {
+    font-weight: bold; /* جعل الليبل أغمق */
+    margin-bottom: 0.5rem;
+}
+
+.modal-body hr {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Modal Order Details Improvements */
+#orderDetailsModalBody h5 {
+    color: var(--admin-primary);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid var(--admin-border);
+    padding-bottom: 0.5rem;
+}
+#orderDetailsModalBody h5:first-child {
+    margin-top: 0;
+}
+#orderDetailsModalBody p {
+    margin-bottom: 0.7rem;
+    line-height: 1.6;
+}
+#orderDetailsModalBody strong {
+    color: var(--admin-text);
+}
+#orderDetailsModalBody .table {
+    margin-top: 0.5rem;
+}
+
+/* =================================== */
+/* 6. Buttons
+/* =================================== */
+.btn {
+    border-radius: var(--admin-radius);
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease;
+}
+.btn-primary {
+    background-color: var(--admin-primary);
+    border-color: var(--admin-primary);
+}
+.btn-primary:hover {
+    background-color: var(--admin-primary-dark);
+    border-color: var(--admin-primary-dark);
+}
+.btn-success { background-color: var(--admin-success); border-color: var(--admin-success); }
+.btn-success:hover { background-color: #1e7e34; border-color: #1c7430; }
+.btn-info { background-color: var(--admin-info); border-color: var(--admin-info); }
+.btn-info:hover { background-color: #117a8b; border-color: #10707f; }
+.btn-danger { background-color: var(--admin-danger); border-color: var(--admin-danger); }
+.btn-danger:hover { background-color: #bd2130; border-color: #b21f2d; }
+.btn-secondary { background-color: var(--admin-muted); border-color: var(--admin-muted); }
+.btn-secondary:hover { background-color: #5a6268; border-color: #545b62; }
+
+/* =================================== */
+/* 7. Badges (Orders)
+/* =================================== */
+.badge-status {
+    padding: .5em .75em; /* زيادة حجم البادج قليلاً */
+    font-size: 85%;
+    font-weight: bold;
+    border-radius: var(--admin-radius);
+    text-transform: capitalize; /* جعل الحرف الأول كبير */
+}
+.badge-status-Pending { background-color: var(--admin-warning); color: #333; }
+.badge-status-Processing { background-color: var(--admin-info); color: #fff; }
+.badge-status-Shipped { background-color: var(--admin-primary); color: #fff; }
+.badge-status-Delivered { background-color: var(--admin-success); color: #fff; }
+.badge-status-Cancelled { background-color: var(--admin-danger); color: #fff; }
+
+/* =================================== */
+/* 8. Dashboard Cards
+/* =================================== */
+#dashboard-stats-cards .card {
+    border: none;
+    border-radius: var(--admin-radius);
+    color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#dashboard-stats-cards .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+}
+#dashboard-stats-cards .card-title {
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+    opacity: 0.9;
+}
+#dashboard-stats-cards h3 {
+    font-size: 2rem;
+}
+#dashboard-stats-cards .fas {
+    opacity: 0.3; /* تقليل شفافية الأيقونة */
+}
+.bg-primary { background-color: var(--admin-primary) !important; }
+.bg-success { background-color: var(--admin-success) !important; }
+.bg-info { background-color: var(--admin-info) !important; }
+
+/* =================================== */
+/* 9. Utility Classes
+/* =================================== */
+.spinner-border {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Toast Container (من admin.js) */
+.toast-container { z-index: 1051 !important; } /* التأكد من أنه فوق العناصر الأخرى */

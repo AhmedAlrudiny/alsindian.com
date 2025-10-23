@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="تفاصيل المنتج لمتجر وردة السنديان. اكتشف باقات الزهور وأضفها إلى السلة">
+    <title>تفاصيل المنتج | وردة السنديان</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="bg-white border-bottom shadow-sm fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-light container">
+            <a class="navbar-brand font-weight-bolder" href="index.html">
+                <i class="fas fa-flower-tulip"></i> وردة السنديان
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" aria-label="الرئيسية">
+                            <i class="fas fa-home"></i> الرئيسية
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#shop" aria-label="المتجر">
+                            <i class="fas fa-shopping-bag"></i> المتجر
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-sm cart-outline" href="cart.html" id="cart-icon" aria-label="السلة">
+                            <i class="fas fa-shopping-cart"></i> 
+                            السلة (<span id="cart-count">0</span>)
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section id="product-detail-container" class="container product-detail-page">
+        <nav aria-label="breadcrumb" class="mt-4">
+            <ol class="breadcrumb bg-transparent">
+                <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
+                <li class="breadcrumb-item"><a href="index.html#shop">المتجر</a></li>
+                <li class="breadcrumb-item active" aria-current="page" id="breadcrumb-product">تفاصيل المنتج</li>
+            </ol>
+        </nav>
+
+        <div id="loading-state" class="text-center py-5">
+            <div class="spinner-border text-primary" role="status">
+                <span class="sr-only">جاري التحميل...</span>
+            </div>
+            <p class="mt-3 text-muted">جاري تحميل تفاصيل المنتج...</p>
+        </div>
+
+        <div id="product-details" class="row" style="display: none;">
+             </div>
+        
+        <hr class="my-5">
+        
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="font-weight-bold mb-4">
+                    <i class="fas fa-comments mr-2 text-primary"></i> تقييمات العملاء
+                </h2>
+                
+                <div class="row">
+                    
+                    <div class="col-md-7 mb-4">
+                        <h5 class="font-weight-bold mb-3">التقييمات المعتمدة (<span id="reviews-count">0</span>)</h5>
+                        <div id="reviews-container" class="reviews-section">
+                            </div>
+                    </div>
+
+                    <div class="col-md-5">
+                        <div class="card shadow-sm p-4 submit-review-card">
+                            <h5 class="font-weight-bold mb-3 text-center">
+                                <i class="fas fa-pen-nib mr-2"></i> أضف تقييمك
+                            </h5>
+                            <form id="review-form" class="needs-validation" novalidate>
+                                <div class="form-group text-center">
+                                    <label class="font-weight-bold mb-2">تقييم المنتج:</label>
+                                    <div class="rating-input d-flex justify-content-center flex-row-reverse">
+                                        <input type="radio" id="star5" name="rating" value="5" required><label for="star5" title="ممتاز" class="fas fa-star"></label>
+                                        <input type="radio" id="star4" name="rating" value="4"><label for="star4" title="جيد جداً" class="fas fa-star"></label>
+                                        <input type="radio" id="star3" name="rating" value="3"><label for="star3" title="جيد" class="fas fa-star"></label>
+                                        <input type="radio" id="star2" name="rating" value="2"><label for="star2" title="مقبول" class="fas fa-star"></label>
+                                        <input type="radio" id="star1" name="rating" value="1"><label for="star1" title="سيئ" class="fas fa-star"></label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="reviewer-name">
+                                        <i class="fas fa-user mr-1"></i> اسمك <span class="text-danger">*</span>
+                                    </label>
+                                    <input type="text" class="form-control" id="reviewer-name" required placeholder="الاسم الكامل">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="review-comment">
+                                        <i class="fas fa-comment-alt mr-1"></i> تعليقك <span class="text-danger">*</span>
+                                    </label>
+                                    <textarea class="form-control" id="review-comment" rows="4" required placeholder="اكتب رأيك عن المنتج..."></textarea>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary btn-block mt-3">
+                                    <i class="fas fa-paper-plane mr-2"></i> إرسال التقييم
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="related-products-section py-5 bg-light" id="related-section" style="display: none;">
+        <div class="container">
+            <h3 class="text-center mb-5 font-weight-bold">
+                <i class="fas fa-heart mr-2 text-primary"></i> منتجات ذات صلة
+            </h3>
+            <div class="row" id="related-products"></div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <h5><i class="fas fa-flower-tulip mr-2"></i> وردة السنديان</h5>
+                    <p class="small mb-0">جمال الطبيعة بين يديك</p>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <h6>تابعنا على</h6>
+                    <div class="social-links">
+                        <a href="https://facebook.com" class="text-white mx-2" aria-label="فيسبوك">
+                            <i class="fab fa-facebook-f fa-lg"></i>
+                        </a>
+                        <a href="https://instagram.com" class="text-white mx-2" aria-label="إنستغرام">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                        <a href="https://wa.me/966500000000" class="text-white mx-2" aria-label="واتساب">
+                            <i class="fab fa-whatsapp fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="bg-secondary">
+            <p class="mb-0">&copy; 2025 وردة السنديان. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

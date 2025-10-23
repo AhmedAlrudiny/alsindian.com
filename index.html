@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="وردة السنديان: متجر زهور طبيعية وتنسيقات أنيقة لجميع المناسبات. نقدم باقات عيد الميلاد، هدايا مواليد، وتوصيل سريع في المدينة المنورة.">
+    <meta name="keywords" content="زهور, باقات, عيد ميلاد, هدايا, توصيل زهور, وردة السنديان">
+    <meta name="author" content="وردة السنديان">
+    <meta property="og:title" content="وردة السنديان | زهور طبيعية وتنسيقات أنيقة">
+    <meta property="og:description" content="متجر زهور فاخر يقدم أجمل الباقات والتنسيقات لجميع المناسبات">
+    <meta property="og:type" content="website">
+    <title>وردة السنديان | زهور طبيعية وتنسيقات أنيقة</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+</head>
+<body>
+    <div id="page-loader" class="page-loader">
+        <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">(الحالية)</span>
+        </div>
+    </div>
+
+    <header class="bg-white border-bottom shadow-sm fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-light container">
+            <a class="navbar-brand font-weight-bolder" href="index.html">
+                <i class="fas fa-flower-tulip"></i> وردة السنديان
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="تبديل التنقل">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto align-items-center">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home"></i> الرئيسية 
+                            <span class="sr-only">(الحالية)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#shop">
+                            <i class="fas fa-shopping-bag"></i> المتجر
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about-section">
+                            <i class="fas fa-leaf"></i> عن المتجر
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact-section">
+                            <i class="fas fa-envelope"></i> اتصل بنا
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-sm cart-outline" href="cart.html" id="cart-icon" aria-label="السلة">
+                            <i class="fas fa-shopping-cart"></i> 
+                            السلة (<span id="cart-count">0</span>)
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <form class="form-inline search-form" id="search-form">
+                            <div class="input-group search-group">
+                                <input class="form-control search-input" type="search" 
+                                       placeholder="ابحث عن منتج..." aria-label="Search" 
+                                       id="search-input">
+                                <div class="input-group-append">
+                                    <button class="btn search-btn" type="submit" id="search-btn" aria-label="بحث">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero-ux text-white text-center" role="banner">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1 class="display-3 font-weight-bold mb-3 animate-fade-in">
+                جمال الطبيعة بين يديك
+            </h1>
+            <p class="lead mb-4 animate-fade-in-delay">
+                زهور فاخرة، تنسيقات مُلهمة، وتوصيل سريع يضيء يومك
+            </p>
+            <a href="#shop" class="btn btn-hero btn-lg mt-3 font-weight-bold rounded-pill shadow-lg animate-fade-in-delay-2">
+                اكتشف مجموعتنا <i class="fas fa-arrow-left mr-2"></i>
+            </a>
+        </div>
+        
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <section class="container my-5 pt-4">
+        <div class="row text-center">
+            <div class="col-md-4 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h4>توصيل سريع</h4>
+                    <p class="text-muted">توصيل في نفس اليوم داخل المدينة المنورة</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h4>جودة مضمونة</h4>
+                    <p class="text-muted">زهور طازجة مقطوفة حديثاً بأعلى المعايير</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h4>تغليف فاخر</h4>
+                    <p class="text-muted">تنسيقات فنية وتغليف راقي لكل مناسبة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="shop" class="container my-5">
+        <h2 class="section-title">تسوق حسب المناسبة</h2>
+        
+        <div class="text-center mb-5">
+            <div class="btn-group filter-buttons" role="group" aria-label="تصفية المنتجات">
+                <button type="button" class="btn btn-filter active" data-filter="all">
+                    <i class="fas fa-th"></i> الكل
+                </button>
+                
+                <button type="button" class="btn btn-filter" data-filter="طبيعي">
+                    <i class="fas fa-leaf"></i> ورد طبيعي
+                </button>
+                <button type="button" class="btn btn-filter" data-filter="صناعي">
+                    <i class="fas fa-ruler-combined"></i> ورد صناعي
+                </button>
+                
+                <button type="button" class="btn btn-filter" data-filter="عيد ميلاد">
+                    <i class="fas fa-birthday-cake"></i> عيد ميلاد
+                </button>
+                <button type="button" class="btn btn-filter" data-filter="حب ورومانسية">
+                    <i class="fas fa-heart"></i> رومانسية
+                </button>
+                <button type="button" class="btn btn-filter" data-filter="زفاف">
+                    <i class="fas fa-rings-wedding"></i> زفاف
+                </button>
+                <button type="button" class="btn btn-filter" data-filter="هدايا مواليد">
+                    <i class="fas fa-baby"></i> مواليد
+                </button>
+                <button type="button" class="btn btn-filter" data-filter="شكر وتقدير">
+                    <i class="fas fa-handshake"></i> شكر وتقدير
+                </button>
+                
+                <button type="button" class="btn btn-filter" data-filter="زهور يومية">
+                    <i class="fas fa-seedling"></i> زهور يومية
+                </button>
+                
+                <a href="#custom-order-section" class="btn btn-primary custom-design-btn" style="white-space: nowrap;">
+                    <i class="fas fa-edit"></i> صمم باقتك
+                </a>
+                
+            </div>
+        </div>
+
+        <div id="no-results" class="text-center py-5" style="display: none;">
+            <div class="alert alert-warning p-4 shadow-sm" role="alert" style="border-right: 5px solid var(--warning-color); border-radius: var(--radius-lg);">
+                <i class="fas fa-exclamation-triangle fa-3x mb-3 text-warning"></i>
+                <h4 class="alert-heading font-weight-bold">عذراً، لا توجد نتائج مطابقة</h4>
+                <p class="lead mb-0 text-muted">لم نتمكن من العثور على المنتجات التي تبحث عنها في هذا التصنيف أو نتيجة البحث.</p>
+                <hr class="my-3">
+                <p class="mb-0 small text-muted">حاول تغيير كلمة البحث أو إعادة تعيين الفلاتر.</p>
+            </div>
+            <button class="btn btn-outline-primary mt-4 btn-lg" onclick="location.reload()">
+                <i class="fas fa-redo-alt mr-2"></i> عرض جميع المنتجات
+            </button>
+        </div>
+        
+        <div id="product-list-container">
+            <div class="product-group" data-category="عيد ميلاد">
+                <div class="category-header">
+                    <h3 class="mb-4 display-5 font-weight-bold">
+                        <i class="fas fa-gift category-icon"></i> باقات عيد الميلاد
+                    </h3>
+                    <p class="lead text-muted mb-4">احتفل بأجمل اللحظات مع مجموعتنا المختارة من الورد</p>
+                </div>
+                <div class="row" id="category-عيد ميلاد-row">
+                    </div>
+                <hr class="section-divider">
+            </div>
+            
+            <div class="product-group" data-category="شكر وتقدير">
+                <div class="category-header">
+                    <h3 class="mb-4 display-5 font-weight-bold">
+                        <i class="fas fa-hand-holding-heart category-icon"></i> باقات شكر وتقدير
+                    </h3>
+                    <p class="lead text-muted mb-4">أرسل امتنانك بأجمل تنسيقات التوليب والزنابق</p>
+                </div>
+                <div class="row" id="category-شكر وتقدير-row">
+                    </div>
+                <hr class="section-divider">
+            </div>
+            
+            <div class="product-group" data-category="هدايا مواليد">
+                <div class="category-header">
+                    <h3 class="mb-4 display-5 font-weight-bold">
+                        <i class="fas fa-baby category-icon"></i> هدايا مواليد
+                    </h3>
+                    <p class="lead text-muted mb-4">أرسل مباركتك بأنسب الباقات</p>
+                </div>
+                <div class="row" id="category-هدايا مواليد-row">
+                    </div>
+                <hr class="section-divider">
+            </div>
+            
+            <div class="product-group" data-category="حب ورومانسية">
+                <div class="category-header">
+                    <h3 class="mb-4 display-5 font-weight-bold">
+                        <i class="fas fa-heart category-icon"></i> باقات الحب والرومانسية
+                    </h3>
+                    <p class="lead text-muted mb-4">أعذب التعبيرات وأجمل الباقات لمن تحب</p>
+                </div>
+                <div class="row" id="category-حب ورومانسية-row">
+                    </div>
+                <hr class="section-divider">
+            </div>
+            
+            <div class="product-group" data-category="زفاف">
+                <div class="category-header">
+                    <h3 class="mb-4 display-5 font-weight-bold">
+                        <i class="fas fa-rings-wedding category-icon"></i> باقات الزفاف
+                    </h3>
+                    <p class="lead text-muted mb-4">أناقة البياض والجمال ليومك الكبير</p>
+                </div>
+                <div class="row" id="category-زفاف-row">
+                    </div>
+                <hr class="section-divider">
+            </div>
+            
+            <div class="product-group" data-category="زهور يومية">
+                <div class="category-header">
+                    <h3 class="mb-4 display-5 font-weight-bold">
+                        <i class="fas fa-seedling category-icon"></i> زهور يومية
+                    </h3>
+                    <p class="lead text-muted mb-4">لمسة من الجمال لتضيء منزلك</p>
+                </div>
+                <div class="row" id="category-زهور يومية-row">
+                    </div>
+                <hr class="section-divider">
+            </div>
+            
+            
+            <section id="custom-order-section" class="container my-5 py-5 bg-light rounded shadow-lg">
+                <h2 class="section-title">صمم باقتك المخصصة</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <p class="text-center lead mb-4">
+                            أرسل لنا صورة الباقة التي تحلم بها وسنقوم بتنفيذها بأجود أنواع الزهور.
+                        </p>
+                        
+                        <form id="custom-order-form" class="p-4 rounded border" enctype="multipart/form-data">
+                            
+                            <div class="form-group">
+                                <label for="custom-name">
+                                    <i class="fas fa-user"></i> اسمك الكامل <span class="text-danger">*</span>
+                                </label>
+                                <input type="text" class="form-control" id="custom-name" name="name" required placeholder="أدخل اسمك">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="custom-email">
+                                    <i class="fas fa-envelope"></i> البريد الإلكتروني <span class="text-danger">*</span>
+                                </label>
+                                <input type="email" class="form-control" id="custom-email" name="email" required placeholder="example@email.com">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="custom-phone">
+                                    <i class="fas fa-phone"></i> رقم الهاتف
+                                </label>
+                                <input type="tel" class="form-control" id="custom-phone" name="phone" placeholder="+966 5X XXX XXXX">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="custom-description">
+                                    <i class="fas fa-comment"></i> وصف الباقة والميزانية المقترحة <span class="text-danger">*</span>
+                                </label>
+                                <textarea class="form-control" id="custom-description" name="description" rows="4" required placeholder="وصف للألوان، نوع الورد، والمناسبة..."></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="design-image" class="font-weight-bold">
+                                    <i class="fas fa-camera"></i> إرفاق صورة التصميم <span class="text-danger">*</span>
+                                </label>
+                                <input type="file" class="form-control-file" id="design-image" name="designImage" accept="image/jpeg,image/png,image/gif" required>
+                                <small class="form-text text-muted">الحد الأقصى لحجم الملف هو 5MB. يرجى إرفاق صورة واضحة للتصميم المطلوب.</small>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-hero btn-lg btn-block mt-4">
+                                <i class="fas fa-upload mr-2"></i> إرسال الطلب المخصص
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+    </section>
+
+    <section id="about-section" class="container my-5 py-5 bg-white shadow-sm rounded">
+        <h2 class="section-title">قصتنا: وردة السنديان</h2>
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-10">
+                <p class="lead text-center mb-4">
+                    تأسس متجر <strong>وردة السنديان</strong> انطلاقاً من شغفنا العميق بجمال الطبيعة وقوة الزهور في التعبير عن المشاعر. نحن نؤمن بأن كل باقة هي قصة، ونسعى لتقديم أجود أنواع الزهور الطبيعية الطازجة، المنتقاة بعناية لضمان وصولها إليك بأبهى حلة.
+                </p>
+                
+                <div class="row text-center mt-5">
+                    <div class="col-md-4 mb-3">
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle fa-2x mb-3"></i>
+                            <h5>جودة مضمونة</h5>
+                            <p class="text-muted">ورود مقطوفة حديثاً</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="about-feature">
+                            <i class="fas fa-palette fa-2x mb-3"></i>
+                            <h5>تنسيقات فنية</h5>
+                            <p class="text-muted">تصميمات عالمية راقية</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="about-feature">
+                            <i class="fas fa-shipping-fast fa-2x mb-3"></i>
+                            <h5>توصيل سريع</h5>
+                            <p class="text-muted">نصل إليك في نفس اليوم</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <a href="#contact-section" class="btn btn-primary btn-lg">
+                        <i class="fas fa-envelope mr-2"></i> تواصل معنا للمزيد
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section py-5">
+        <div class="container">
+            <h2 class="section-title text-white">آراء عملائنا</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"زهور رائعة وخدمة ممتازة! وصلت الباقة في الوقت المحدد وكانت أجمل من الصورة"</p>
+                        <div class="testimonial-author">
+                            <strong>سارة أحمد</strong>
+                            <span class="text-muted">- المدينة المنورة</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"أفضل متجر زهور في المدينة! التنسيقات فنية والورد طازج دائماً"</p>
+                        <div class="testimonial-author">
+                            <strong>محمد عبدالله</strong>
+                            <span class="text-muted">- المدينة المنورة</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="testimonial-text">"خدمة احترافية وسرعة في التوصيل. أنصح الجميع بالتعامل معهم"</p>
+                        <div class="testimonial-author">
+                            <strong>فاطمة خالد</strong>
+                            <span class="text-muted">- المدينة المنورة</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-section" class="container my-5 py-5 bg-light rounded">
+        <h2 class="section-title">تواصل معنا</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <p class="text-center lead mb-4">هل لديك استفسار؟ نحن هنا للمساعدة</p>
+                
+                <div class="row text-center mb-5">
+                    <div class="col-md-4 mb-3">
+                        <div class="contact-info-item">
+                            <i class="fas fa-phone fa-2x mb-2"></i>
+                            <h5>اتصل بنا</h5>
+                            <p class="text-muted" dir="ltr">+966 50 000 0000</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="contact-info-item">
+                            <i class="fas fa-envelope fa-2x mb-2"></i>
+                            <h5>البريد الإلكتروني</h5>
+                            <p class="text-muted">info@wardat.com</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="contact-info-item">
+                            <i class="fas fa-map-marker-alt fa-2x mb-2"></i>
+                            <h5>الموقع</h5>
+                            <p class="text-muted">المدينة المنورة، السعودية</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="social-icons mb-4">
+                    <a href="https://www.facebook.com/share/19oaBATUaV/" target="_blank" class="social-link facebook" aria-label="فيسبوك">
+                        <i class="fab fa-facebook-f fa-2x"></i>
+                    </a>
+                    <a href="https://www.instagram.com/alsandean756?igsh=MW4zbW1jNWZuNjB0dg==" target="_blank" class="social-link instagram" aria-label="إنستغرام">
+                        <i class="fab fa-instagram fa-2x"></i>
+                    </a>
+                    <a href="https://wa.me/966500000000" target="_blank" class="social-link whatsapp" aria-label="واتساب">
+                        <i class="fab fa-whatsapp fa-2x"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="social-link twitter" aria-label="تويتر">
+                        <i class="fab fa-twitter fa-2x"></i>
+                    </a>
+                </div>
+                
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="contact-name">
+                            <i class="fas fa-user"></i> الاسم
+                        </label>
+                        <input type="text" class="form-control" id="contact-name" name="name" required placeholder="أدخل اسمك الكامل">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contact-email">
+                            <i class="fas fa-envelope"></i> البريد الإلكتروني
+                        </label>
+                        <input type="email" class="form-control" id="contact-email" name="email" required placeholder="example@email.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contact-phone">
+                            <i class="fas fa-phone"></i> رقم الهاتف (اختياري)
+                        </label>
+                        <input type="tel" class="form-control" id="contact-phone" name="phone" placeholder="+966 50 000 0000">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contact-message">
+                            <i class="fas fa-comment"></i> الرسالة
+                        </label>
+                        <textarea class="form-control" id="contact-message" name="message" rows="4" required placeholder="اكتب رسالتك هنا..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block btn-lg">
+                        <i class="fas fa-paper-plane mr-2"></i> إرسال الرسالة
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter-section py-5">
+        <div class="container text-center">
+            <h3 class="text-white mb-3">اشترك في نشرتنا البريدية</h3>
+            <p class="text-white mb-4">احصل على أحدث العروض والتخفيضات مباشرة في بريدك</p>
+            <form class="newsletter-form" id="newsletter-form">
+                <div class="input-group justify-content-center">
+                    <input type="email" class="form-control newsletter-input" placeholder="أدخل بريدك الإلكتروني" required>
+                    <div class="input-group-append">
+                        <button class="btn btn-light" type="submit">
+                            <i class="fas fa-bell mr-2"></i> اشترك الآن
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="mb-3">
+                        <i class="fas fa-flower-tulip mr-2"></i> وردة السنديان
+                    </h5>
+                    <p class="text-muted">متجر زهور فاخر يقدم أجمل الباقات والتنسيقات لجميع المناسبات في المدينة المنورة</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="mb-3">روابط سريعة</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-left ml-2"></i> الرئيسية</a></li>
+                        <li><a href="#shop"><i class="fas fa-chevron-left ml-2"></i> المتجر</a></li>
+                        <li><a href="#about-section"><i class="fas fa-chevron-left ml-2"></i> من نحن</a></li>
+                        <li><a href="#contact-section"><i class="fas fa-chevron-left ml-2"></i> اتصل بنا</a></li>
+                        <li><a href="cart.html"><i class="fas fa-chevron-left ml-2"></i> السلة</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="mb-3">معلومات التواصل</h5>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-2">
+                            <i class="fas fa-map-marker-alt ml-2"></i> المدينة المنورة، السعودية
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-phone ml-2"></i> <span dir="ltr">+966 50 000 0000</span>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-envelope ml-2"></i> info@wardat.com
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="bg-secondary my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-right">
+                    <p class="mb-0">&copy; 2025 وردة السنديان. جميع الحقوق محفوظة.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-left">
+                    <a href="#" class="text-white mx-2">سياسة الخصوصية</a>
+                    <a href="#" class="text-white mx-2">الشروط والأحكام</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="back-to-top" aria-label="العودة للأعلى">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

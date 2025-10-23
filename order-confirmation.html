@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تأكيد الطلب | وردة السنديان</title>
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .confirmation-wrapper {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            margin-top: -70px;
+            padding-top: 100px;
+        }
+
+        .confirmation-card {
+            background: white;
+            border-radius: 15px;
+            padding: 60px 40px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 550px;
+            width: 100%;
+            animation: slideUp 0.5s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .success-icon {
+            font-size: 80px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .confirmation-card h2 {
+            color: #2c3e50;
+            font-weight: 800;
+            font-size: 28px;
+            margin: 20px 0;
+        }
+
+        .confirmation-card p {
+            color: #7f8c8d;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .order-details {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border: 2px solid #e64d99;
+            text-align: right;
+        }
+
+        .order-details p {
+            margin: 12px 0;
+            color: #2c3e50;
+            font-size: 15px;
+        }
+
+        .order-details strong {
+            color: #667eea;
+        }
+
+        .order-id {
+            font-size: 32px;
+            color: #e64d99;
+            font-weight: 900;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 2px;
+        }
+
+        .order-total {
+            font-size: 28px;
+            color: #e64d99;
+            font-weight: 900;
+            margin: 15px 0;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin: 15px 0;
+            font-size: 14px;
+        }
+
+        .info-box {
+            background: #E3F2FD;
+            border-left: 4px solid #2196F3;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: right;
+        }
+
+        .info-box h4 {
+            color: #1565C0;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .info-box p {
+            margin: 8px 0;
+            color: #424242;
+            font-size: 14px;
+        }
+
+        .info-box ol {
+            margin: 10px 0 0 0;
+            padding-right: 20px;
+            text-align: right;
+        }
+
+        .info-box li {
+            margin: 8px 0;
+            color: #424242;
+            font-size: 14px;
+        }
+
+        .btn-continue {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 14px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .btn-continue:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+            color: white;
+            text-decoration: none;
+        }
+
+        .btn-track {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .btn-track:hover {
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+        }
+
+        .social-links {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .social-links p {
+            color: #7f8c8d;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            line-height: 45px;
+            text-align: center;
+            margin: 0 8px;
+            transition: all 0.3s;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        @media (max-width: 576px) {
+            .confirmation-card {
+                padding: 40px 25px;
+            }
+
+            .confirmation-card h2 {
+                font-size: 24px;
+            }
+
+            .success-icon {
+                font-size: 60px;
+            }
+
+            .order-id {
+                font-size: 24px;
+            }
+
+            .order-total {
+                font-size: 22px;
+            }
+
+            .order-details {
+                padding: 20px;
+            }
+
+            .btn-continue {
+                padding: 12px 30px;
+                font-size: 14px;
+                width: 100%;
+            }
+
+            .btn-track {
+                width: 48%;
+                margin: 8px 1%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation-wrapper">
+        <div class="confirmation-card">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+
+            <h2>تم استقبال طلبك بنجاح!</h2>
+            <p>شكراً لاختيارك وردة السنديان</p>
+
+            <div class="status-badge">
+                <i class="fas fa-hourglass-start"></i> قيد المعالجة
+            </div>
+
+            <div class="order-details">
+                <p><strong>رقم الطلب:</strong></p>
+                <div class="order-id" id="order-id">#ORD-000000</div>
+
+                <hr style="border-color: rgba(102, 126, 234, 0.3); margin: 15px 0;">
+
+                <p><strong>التاريخ:</strong></p>
+                <p id="order-date">-</p>
+
+                <p style="margin-top: 15px;"><strong>عدد المنتجات:</strong></p>
+                <p id="order-items">-</p>
+
+                <p style="margin-top: 15px;"><strong>الإجمالي:</strong></p>
+                <div class="order-total" id="order-total">-</div>
+            </div>
+
+            <div class="info-box">
+                <h4><i class="fas fa-info-circle"></i> ما الخطوات التالية؟</h4>
+                <ol>
+                    <li>سيقوم فريقنا بتأكيد الطلب خلال ساعة واحدة</li>
+                    <li>سيتم الإعداد والتجهيز في نفس اليوم</li>
+                    <li>توصيل مجاني في نفس اليوم أو اليوم التالي</li>
+                    <li>ستتلقى تحديثات عبر البريد الإلكتروني</li>
+                </ol>
+            </div>
+
+            <p style="color: #666; margin-top: 20px; font-size: 14px;">
+                <i class="fas fa-envelope"></i> تم إرسال تفاصيل الطلب الكاملة إلى بريدك الإلكتروني
+            </p>
+
+            <div>
+                <button class="btn-track" onclick="window.print()">
+                    <i class="fas fa-print"></i> اطبع الإيصال
+                </button>
+                <button class="btn-track" onclick="location.href='index.html'">
+                    <i class="fas fa-home"></i> الرئيسية
+                </button>
+            </div>
+
+            <a href="index.html" class="btn btn-continue">
+                <i class="fas fa-shopping-bag"></i> متابعة التسوق
+            </a>
+
+            <div class="social-links">
+                <p>تابعنا على وسائل التواصل</p>
+                <a href="https://facebook.com" target="_blank" title="فيسبوك">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" title="إنستغرام">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/966500000000" target="_blank" title="واتس آب">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" title="تويتر">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const orderData = JSON.parse(localStorage.getItem('last-order') || 'null');
+
+            if (orderData) {
+                document.getElementById('order-id').textContent = '#' + orderData.id;
+                document.getElementById('order-date').textContent = orderData.date;
+                document.getElementById('order-items').textContent = orderData.itemsCount + ' منتج/ات';
+                document.getElementById('order-total').textContent = 'ر.س ' + orderData.total;
+
+                // لا نقوم بمسح البيانات هنا، بل في الدالة الرئيسية OrderConfirmationPage.init
+                // لكن بما أن المنطق تم نقله هنا، نكتفي بالتحقق
+            } else {
+                // في حال عدم وجود بيانات للطلب، يعود المستخدم للصفحة الرئيسية
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+</body>
+</html>

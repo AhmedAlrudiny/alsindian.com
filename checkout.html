@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="إتمام الدفع - وردة السنديان. أكمل طلبك بأمان">
+    <title>إتمام الدفع | وردة السنديان</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="bg-white border-bottom shadow-sm fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-light container">
+            <a class="navbar-brand font-weight-bolder" href="index.html">
+                <i class="fas fa-flower-tulip"></i> وردة السنديان
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home"></i> الرئيسية
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.html">
+                            <i class="fas fa-shopping-cart"></i> السلة
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="container checkout-page-content">
+        <nav aria-label="breadcrumb" class="mt-4">
+            <ol class="breadcrumb bg-transparent">
+                <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
+                <li class="breadcrumb-item"><a href="cart.html">السلة</a></li>
+                <li class="breadcrumb-item active" aria-current="page">الدفع</li>
+            </ol>
+        </nav>
+
+        <div class="checkout-header text-center mb-5">
+            <h1 class="display-4 font-weight-bold">
+                <i class="fas fa-credit-card checkout-icon"></i> إتمام عملية الدفع
+            </h1>
+            <p class="lead text-muted">أنت على بُعد خطوة واحدة من إتمام طلبك</p>
+        </div>
+
+        <div class="checkout-steps mb-5">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="step completed">
+                        <div class="step-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <p class="step-label">السلة</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step active">
+                        <div class="step-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <p class="step-label">الدفع</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step">
+                        <div class="step-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <p class="step-label">التأكيد</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8 mb-4">
+                <form id="checkout-form" novalidate>
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-white">
+                            <h5 class="mb-0 font-weight-bold">
+                                <span class="step-number">1</span>
+                                <i class="fas fa-shipping-fast mr-2"></i> تفاصيل الشحن
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="name">
+                                        <i class="fas fa-user mr-1"></i> الاسم الكامل <span class="text-danger">*</span>
+                                    </label>
+                                    <input type="text" class="form-control" id="name" required
+                                           placeholder="أدخل اسمك الكامل">
+                                    <div class="invalid-feedback">
+                                        يرجى إدخال الاسم الكامل
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="phone">
+                                        <i class="fas fa-phone mr-1"></i> رقم الهاتف <span class="text-danger">*</span>
+                                    </label>
+                                    <input type="tel" class="form-control" id="phone" required
+                                           placeholder="+966 5X XXX XXXX" pattern="[0-9+\s-]+">
+                                    <div class="invalid-feedback">
+                                        يرجى إدخال رقم هاتف صحيح
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">
+                                    <i class="fas fa-envelope mr-1"></i> البريد الإلكتروني <span class="text-danger">*</span>
+                                </label>
+                                <input type="email" class="form-control" id="email" required
+                                       placeholder="example@email.com">
+                                <div class="invalid-feedback">
+                                    يرجى إدخال بريد إلكتروني صحيح
+                                </div>
+                                <small class="form-text text-muted">
+                                    سنرسل تأكيد الطلب على هذا البريد
+                                </small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="address">
+                                    <i class="fas fa-map-marker-alt mr-1"></i> عنوان التوصيل <span class="text-danger">*</span>
+                                </label>
+                                <input type="text" class="form-control" id="address" required
+                                       placeholder="المدينة - الحي - الشارع - رقم المبنى">
+                                <div class="invalid-feedback">
+                                    يرجى إدخال عنوان التوصيل كاملاً
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="city">
+                                        <i class="fas fa-city mr-1"></i> المدينة <span class="text-danger">*</span>
+                                    </label>
+                                    <select class="form-control" id="city" required>
+                                        <option value="">اختر المدينة</option>
+                                        <option value="medina" selected>المدينة المنورة</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        يرجى اختيار المدينة
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="postal-code">
+                                        <i class="fas fa-mailbox mr-1"></i> الرمز البريدي (اختياري)
+                                    </label>
+                                    <input type="text" class="form-control" id="postal-code"
+                                           placeholder="12345" pattern="[0-9]{5}">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="notes">
+                                    <i class="fas fa-sticky-note mr-1"></i> ملاحظات إضافية (اختياري)
+                                </label>
+                                <textarea class="form-control" id="notes" rows="3"
+                                          placeholder="أي ملاحظات خاصة للتوصيل..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-white">
+                            <h5 class="mb-0 font-weight-bold">
+                                <span class="step-number">2</span>
+                                <i class="fas fa-clock mr-2"></i> وقت التوصيل المفضل
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="delivery-date">
+                                        <i class="fas fa-calendar mr-1"></i> التاريخ <span class="text-danger">*</span>
+                                    </label>
+                                    <input type="date" class="form-control" id="delivery-date" required>
+                                    <div class="invalid-feedback">
+                                        يرجى اختيار تاريخ التوصيل
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="delivery-time">
+                                        <i class="fas fa-clock mr-1"></i> الوقت <span class="text-danger">*</span>
+                                    </label>
+                                    <select class="form-control" id="delivery-time" required>
+                                        <option value="">اختر الوقت</option>
+                                        <option value="morning">صباحاً (9:00 - 12:00)</option>
+                                        <option value="afternoon">ظهراً (12:00 - 3:00)</option>
+                                        <option value="evening">مساءً (3:00 - 6:00)</option>
+                                        <option value="night">ليلاً (6:00 - 9:00)</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        يرجى اختيار وقت التوصيل
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="alert alert-info mb-0" role="alert">
+                                <i class="fas fa-info-circle mr-2"></i>
+                                <strong>ملاحظة:</strong> توصيل مجاني لنفس اليوم للطلبات قبل الساعة 2 ظهراً
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-white">
+                            <h5 class="mb-0 font-weight-bold">
+                                <span class="step-number">3</span>
+                                <i class="fas fa-credit-card mr-2"></i> طريقة الدفع
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="payment-methods">
+                                <div class="form-check payment-option">
+                                    <input class="form-check-input" type="radio" name="paymentMethod"
+                                           id="cod" value="cod" checked>
+                                    <label class="form-check-label" for="cod">
+                                        <div class="payment-method-card">
+                                            <i class="fas fa-money-bill-wave fa-2x"></i>
+                                            <div class="payment-method-details">
+                                                <strong>الدفع عند الاستلام</strong>
+                                                <small class="text-muted">ادفع نقداً عند استلام طلبك</small>
+                                            </div>
+                                            <span class="badge badge-success">متاح</span>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <div class="form-check payment-option">
+                                    <input class="form-check-input" type="radio" name="paymentMethod"
+                                           id="card" value="card" disabled>
+                                    <label class="form-check-label" for="card">
+                                        <div class="payment-method-card disabled">
+                                            <i class="fas fa-credit-card fa-2x"></i>
+                                            <div class="payment-method-details">
+                                                <strong>بطاقة الائتمان</strong>
+                                                <small class="text-muted">Visa, MasterCard, Mada</small>
+                                            </div>
+                                            <span class="badge badge-secondary">قريباً</span>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <div class="form-check payment-option">
+                                    <input class="form-check-input" type="radio" name="paymentMethod"
+                                           id="bank" value="bank" disabled>
+                                    <label class="form-check-label" for="bank">
+                                        <div class="payment-method-card disabled">
+                                            <i class="fas fa-university fa-2x"></i>
+                                            <div class="payment-method-details">
+                                                <strong>التحويل البنكي</strong>
+                                                <small class="text-muted">تحويل مباشر إلى حسابنا البنكي</small>
+                                            </div>
+                                            <span class="badge badge-secondary">قريباً</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="security-note mt-4 p-3 bg-light rounded">
+                                <i class="fas fa-shield-alt mr-2"></i>
+                                <small class="text-muted">
+                                    جميع معاملاتك محمية بأعلى معايير الأمان والتشفير
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-body">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="terms" required>
+                                <label class="form-check-label" for="terms">
+                                    أوافق على <a href="#" class="text-primary">الشروط والأحكام</a>
+                                    و<a href="#" class="text-primary">سياسة الخصوصية</a>
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div class="invalid-feedback">
+                                    يجب الموافقة على الشروط والأحكام
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="complete-order-btn"
+                            class="btn btn-primary btn-lg btn-block complete-order-btn">
+                        <i class="fas fa-lock mr-2"></i> تأكيد الطلب والدفع
+                    </button>
+                </form>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card shadow-lg cart-summary sticky-top">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4 font-weight-bold">
+                            <i class="fas fa-clipboard-list mr-2"></i> ملخص الطلب
+                        </h5>
+
+                        <div id="order-items-preview" class="mb-3">
+                            </div>
+
+                        <hr>
+
+                        <ul class="list-group list-group-flush summary-list">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span>المجموع الفرعي:</span>
+                                <strong id="checkout-subtotal">ر.س 0.00</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span>رسوم التوصيل:</span>
+                                <strong id="checkout-shipping">ر.س 0.00</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center" id="checkout-discount-row" style="display: none;">
+                                <span class="text-success">الخصم:</span>
+                                <strong id="checkout-discount" class="text-success">ر.س 0.00</strong>
+                            </li>
+                             <li class="list-group-item d-flex justify-content-between align-items-center" id="checkout-vat-row" style="display: none;">
+                                <span>ضريبة القيمة المضافة (14%):</span>
+                                <strong id="checkout-vat">ر.س 0.00</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center border-top-2">
+                                <strong class="font-weight-bolder">المجموع الكلي:</strong>
+                                <strong id="checkout-total" class="font-weight-bolder text-primary">ر.س 0.00</strong>
+                            </li>
+                        </ul>
+
+                        <div class="trust-info mt-4 p-3 bg-light rounded">
+                            <div class="mb-2">
+                                <i class="fas fa-check-circle text-success mr-2"></i>
+                                <small>معاملة آمنة 100%</small>
+                            </div>
+                            <div class="mb-2">
+                                <i class="fas fa-truck text-success mr-2"></i>
+                                <small>توصيل سريع</small>
+                            </div>
+                            <div>
+                                <i class="fas fa-undo text-success mr-2"></i>
+                                <small>سياسة إرجاع مرنة</small>
+                            </div>
+                        </div>
+
+                        <div class="help-section mt-4 pt-3 text-center border-top">
+                            <i class="fas fa-headset fa-3x text-primary mb-3"></i>
+                            <h6 class="font-weight-bold">هل تحتاج مساعدة؟</h6>
+                            <p class="text-muted small mb-3">فريقنا جاهز لمساعدتك</p>
+                            <a href="https://wa.me/966500000000" class="btn btn-success btn-sm btn-block">
+                                <i class="fab fa-whatsapp mr-2"></i> تواصل معنا
+                            </a>
+                            <a href="tel:+966500000000" class="btn btn-outline-primary btn-sm btn-block mt-2">
+                                <i class="fas fa-phone mr-2"></i> اتصل بنا
+                            </a>
+                        </div>
+                        </div>
+                </div>
+
+                </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-1">&copy; 2025 وردة السنديان. جميع الحقوق محفوظة.</p>
+            <p class="small text-muted mb-0">
+                <i class="fas fa-shield-alt mr-1"></i> معاملاتك آمنة ومحمية
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

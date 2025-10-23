@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="سلة التسوق - وردة السنديان. راجع مشترياتك وأكمل طلبك في المدينة المنورة.">
+    <meta name="keywords" content="سلة تسوق, زهور, وردة السنديان, المدينة المنورة">
+    <meta name="robots" content="index, follow">
+    <title>السلة | وردة السنديان</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="bg-white border-bottom shadow-sm fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-light container">
+            <a class="navbar-brand" href="index.html">
+                <img src="/images/logo.png" alt="وردة السنديان" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home"></i> الرئيسية
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#shop">
+                            <i class="fas fa-shopping-bag"></i> المتجر
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link btn btn-sm cart-outline" href="cart.html" id="cart-icon">
+                            <i class="fas fa-shopping-cart"></i> السلة (<span id="cart-count">0</span>)
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="container cart-page-content">
+        <nav aria-label="breadcrumb" class="mt-4">
+            <ol class="breadcrumb bg-transparent">
+                <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
+                <li class="breadcrumb-item active" aria-current="page">السلة</li>
+            </ol>
+        </nav>
+
+        <div class="cart-header text-center mb-5">
+            <h1 class="display-4 font-weight-bolder">
+                <i class="fas fa-shopping-cart cart-icon-header"></i> سلة التسوق
+            </h1>
+            <p class="lead text-muted">راجع مشترياتك قبل إتمام الطلب</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8 order-lg-1 mb-4">
+
+                <div id="empty-cart-section" class="empty-cart-section" style="display: none;">
+                    <div class="text-center py-5">
+                        <i class="fas fa-shopping-cart fa-5x text-muted mb-4"></i>
+                        <h3 class="text-muted mb-3">سلتك فارغة حالياً</h3>
+                        <p class="text-muted mb-4">ابدأ بإضافة بعض المنتجات الرائعة!</p>
+                        <a href="index.html#shop" class="btn btn-primary btn-lg">
+                            <i class="fas fa-shopping-bag mr-2"></i> تصفح المنتجات
+                        </a>
+                    </div>
+                </div>
+
+                <div id="cart-items-section" style="display: none;">
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-white">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0 font-weight-bold">
+                                    <i class="fas fa-list mr-2"></i> منتجاتك
+                                </h5>
+                                <button class="btn btn-sm btn-outline-danger" id="clear-cart-btn">
+                                    <i class="fas fa-trash-alt mr-1"></i> إفراغ السلة
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body p-0">
+                            <div id="cart-items-container">
+                                </div>
+                        </div>
+                    </div>
+
+                    <div class="card shadow-sm gift-message-card">
+                        <div class="card-body">
+                            <h5 class="font-weight-bold mb-3">
+                                <i class="fas fa-gift mr-2"></i> بطاقة الإهداء والرسالة
+                            </h5>
+                            <p class="text-muted small mb-3">
+                                اكتب رسالتك وسنقوم بطباعتها وإرفاقها مع طلبك مجاناً
+                            </p>
+                            <textarea class="form-control" rows="4" id="gift-message"
+                                      placeholder="أدخل رسالتك هنا... (اختياري)"
+                                      maxlength="500"></textarea>
+                            <small class="text-muted">
+                                <span id="char-count">0</span>/500 حرف
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 order-lg-2">
+                <div class="card shadow-lg cart-summary sticky-top">
+                    <div class="card-body">
+                        <div class="coupon-card-integrated p-3 mb-4 rounded border" style="background-color: #f7f7f7;">
+                            <h5 class="font-weight-bold mb-3">
+                                <i class="fas fa-tag mr-2"></i> كود الخصم
+                            </h5>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="coupon-input"
+                                    placeholder="أدخل كود الخصم" aria-label="كود الخصم">
+                                <div class="input-group-append">
+                                    <button class="btn btn-dark" type="button" id="apply-coupon-btn">
+                                        <i class="fas fa-check mr-1"></i> تطبيق
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="coupon-message" class="mt-2"></div>
+                        </div>
+
+                        <h5 class="card-title mb-4 font-weight-bold">
+                            <i class="fas fa-calculator mr-2"></i> ملخص الطلب
+                        </h5>
+
+                        <ul class="list-group list-group-flush summary-list">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span>المجموع الفرعي:</span>
+                                <strong id="cart-subtotal" class="font-weight-bold">ر.س 0.00</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span>رسوم التوصيل:</span>
+                                <strong id="cart-shipping">ر.س 0.00</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center" id="discount-row" style="display: none;">
+                                <span class="text-success">
+                                    <i class="fas fa-tag mr-1"></i> الخصم:
+                                </span>
+                                <strong id="cart-discount" class="text-success">ر.س 0.00</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center" id="vat-row" style="display: none;">
+                                <span>ضريبة القيمة المضافة (14%):</span>
+                                <strong id="cart-vat">ر.س 0.00</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center border-top-2">
+                                <strong class="font-weight-bolder">الإجمالي الكلي:</strong>
+                                <strong id="cart-total" class="font-weight-bolder text-primary">ر.س 0.00</strong>
+                            </li>
+                        </ul>
+
+                        <div class="shipping-info mt-3 p-3 bg-light rounded">
+                            <small class="text-muted" id="shipping-message">
+                                <i class="fas fa-truck mr-2"></i>
+                                شحن مجاني للطلبات فوق 100 ر.س
+                            </small>
+                        </div>
+
+                        <a href="checkout.html" id="checkout-btn"
+                           class="btn btn-primary btn-lg btn-block mt-4 checkout-btn disabled">
+                            <i class="fas fa-lock mr-2"></i> متابعة لتأكيد الطلب
+                        </a>
+
+                        <div class="text-center mt-3 mb-4">
+                            <small class="text-muted">
+                                <i class="fas fa-shield-alt mr-1"></i> دفع آمن ومحمي 100%
+                            </small>
+                        </div>
+
+                        <div class="help-section mt-4 p-3 text-center border-top">
+                            <i class="fas fa-headset text-primary fa-2x mb-2"></i>
+                            <p class="fw-bold mb-1">هل تحتاج مساعدة؟</p>
+                            <p class="text-muted small mb-3">فريقنا جاهز لمساعدتك في أي وقت</p>
+                            <a href="https://wa.me/966500000000" class="btn btn-success btn-sm w-100 mb-2">
+                                <i class="fab fa-whatsapp mr-1"></i> تواصل عبر واتساب
+                            </a>
+                            <a href="tel:+966500000000" class="btn btn-outline-primary btn-sm w-100">
+                                <i class="fas fa-phone-alt mr-1"></i> اتصل بنا مباشرة
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5 mb-4">
+            <a href="index.html#shop" class="btn btn-outline-primary btn-lg">
+                <i class="fas fa-arrow-right mr-2"></i> متابعة التسوق
+            </a>
+        </div>
+    </section>
+
+    <section class="recommended-section py-5 bg-light">
+        <div class="container">
+            <h3 class="text-center mb-4 font-weight-bold">
+                <i class="fas fa-star mr-2"></i> منتجات قد تعجبك
+            </h3>
+            <div class="row" id="recommended-products">
+                </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <h5><i class="fas fa-flower-tulip mr-2"></i> وردة السنديان</h5>
+                    <p class="small mb-0">جمال الطبيعة بين يديك</p>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <h6>تابعنا على</h6>
+                    <div class="social-links">
+                        <a href="https://facebook.com" class="text-white mx-2" aria-label="فيسبوك"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="https://instagram.com" class="text-white mx-2" aria-label="إنستغرام"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="https://wa.me/966500000000" class="text-white mx-2" aria-label="واتساب"><i class="fab fa-whatsapp fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="bg-secondary">
+            <p class="mb-0">&copy; 2025 وردة السنديان. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="back-to-top" aria-label="العودة للأعلى" style="display: none;">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
